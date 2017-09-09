@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>0</button><br><br>
+	<button>12</button><br><br>
+	<button>324</button><br><br>
+	<button>1003</button><br><br>
+	<button>23938</button><br><br>
+	<button>543539</button><br><br>
+	<button>6344534</button><br><br>
+	<button>10092342</button><br><br>
+	<button>543092383</button><br><br>
+	<button>9002832857</button><br><br>
+</body>
+<script>
+	document.addEventListener('click', chineseVoice);
+
+	function chineseVoice(e) {
+		if (e.target.tagName === 'BUTTON') {
+			let msg = new SpeechSynthesisUtterance(+e.target.innerHTML);
+			msg.lang = 'zh-CN';
+			speechSynthesis.speak(msg);
+		}
+	}
+</script>
+</html>
